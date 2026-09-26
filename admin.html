@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quản trị - CleanHome</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="admin-layout">
+  <aside class="sidebar">
+    <a href="admin.html" class="logo" style="display:block;">🧼 CleanHome</a>
+    <a href="admin.html" class="active">📊 Dashboard</a>
+    <a href="admin.html">🧾 Đơn hàng</a>
+    <a href="index.html" target="_blank">🌐 Xem trang khách</a>
+    <a href="#" onclick="logout()">🚪 Đăng xuất</a>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <h2 class="title" style="margin:0;">Dashboard quản trị</h2>
+      <span class="bell" id="bellIcon" style="display:none;"><span id="bellCount"></span>🔔</span>
+    </div>
+
+    <div class="stat-grid" id="statGrid"></div>
+
+    <h3 style="margin-bottom:12px;">Đơn hàng gần đây</h3>
+    <div class="overflow-x">
+      <table>
+        <thead><tr><th>Mã đơn</th><th>Khách hàng</th><th>Dịch vụ</th><th>Ngày giờ</th><th>Trạng thái</th><th>Cập nhật</th></tr></thead>
+        <tbody id="ordersBody"></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="js/store.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

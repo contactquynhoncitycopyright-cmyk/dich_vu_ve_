@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giới thiệu - CleanHome</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="wrap top-bar-inner">
+    <span>📍 TP.HCM &nbsp;·&nbsp; 📞 <a href="tel:0909000000">0909 000 000</a> &nbsp;·&nbsp; ✉️ contact@cleanhome.vn</span>
+    <span>🕒 Thứ 2 - CN: 8:00 - 17:30</span>
+  </div>
+</div>
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">🧼 CleanHome</a>
+    <button class="hamburger" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Trang chủ</a>
+      <a href="about.html" class="active">Giới thiệu</a>
+      <div class="dropdown">
+        <a href="index.html#services">Dịch vụ ▾</a>
+        <div class="dropdown-menu" id="navServiceMenu"></div>
+      </div>
+      <a href="pricing.html">Bảng giá</a>
+      <a href="gallery.html">Hình ảnh</a>
+      <a href="contact.html">Liên hệ</a>
+    </div>
+    <button class="btn btn-primary" onclick="openBooking()">Đặt dịch vụ</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Về CleanHome</h1>
+    <p>Hơn nhiều năm kinh nghiệm trong lĩnh vực vệ sinh nhà ở, văn phòng và công trình — CleanHome mang đến giải pháp làm sạch tận tâm, minh bạch và chuyên nghiệp.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 class="title">Vì sao khách hàng chọn chúng tôi?</h2>
+  <p class="subtitle">Sự hài lòng của khách hàng luôn là ưu tiên hàng đầu</p>
+  <div class="grid">
+    <div class="card"><div class="card-body">
+      <h3>👷 Nhân viên chuyên nghiệp</h3><p>Đội ngũ được đào tạo bài bản, tận tâm với công việc.</p>
+    </div></div>
+    <div class="card"><div class="card-body">
+      <h3>⚡ Đặt lịch nhanh chóng</h3><p>Chỉ mất vài phút để đặt lịch, xác nhận nhanh trong ngày.</p>
+    </div></div>
+    <div class="card"><div class="card-body">
+      <h3>💰 Giá cả minh bạch</h3><p>Báo giá rõ ràng trước khi thực hiện, không phát sinh ẩn.</p>
+    </div></div>
+    <div class="card"><div class="card-body">
+      <h3>🧰 Dụng cụ chuyên dụng</h3><p>Sử dụng thiết bị và hóa chất an toàn, thân thiện môi trường.</p>
+    </div></div>
+    <div class="card"><div class="card-body">
+      <h3>⏰ Đúng giờ</h3><p>Cam kết có mặt đúng lịch hẹn đã xác nhận.</p>
+    </div></div>
+    <div class="card"><div class="card-body">
+      <h3>☎️ Hỗ trợ 24/7</h3><p>Luôn sẵn sàng hỗ trợ và giải đáp thắc mắc của khách hàng.</p>
+    </div></div>
+  </div>
+</section>
+
+<section class="wrap" style="background:var(--card);border-radius:16px;">
+  <div class="stat-grid" style="text-align:center;">
+    <div class="stat"><div class="num">5.000+</div><div class="lbl">Khách hàng</div></div>
+    <div class="stat"><div class="num">10.000+</div><div class="lbl">Đơn hoàn thành</div></div>
+    <div class="stat"><div class="num">50+</div><div class="lbl">Nhân viên</div></div>
+    <div class="stat"><div class="num">4.9/5</div><div class="lbl">Đánh giá</div></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 class="title">Quy trình làm việc</h2>
+  <p class="subtitle">Đơn giản, rõ ràng, minh bạch ở mọi bước</p>
+  <div class="grid">
+    <div class="card"><div class="card-body"><h3>1. Chọn dịch vụ</h3><p>Chọn loại hình vệ sinh phù hợp với nhu cầu của bạn.</p></div></div>
+    <div class="card"><div class="card-body"><h3>2. Chọn ngày giờ</h3><p>Đặt lịch hẹn theo thời gian thuận tiện nhất.</p></div></div>
+    <div class="card"><div class="card-body"><h3>3. Xác nhận</h3><p>Nhân viên liên hệ xác nhận và tư vấn chi tiết.</p></div></div>
+    <div class="card"><div class="card-body"><h3>4. Hoàn thành</h3><p>Thực hiện dịch vụ và nghiệm thu cùng khách hàng.</p></div></div>
+  </div>
+</section>
+
+<section class="wrap" style="text-align:center;background:var(--card);border-radius:16px;">
+  <h2 class="title">Sẵn sàng trải nghiệm dịch vụ?</h2>
+  <button class="btn btn-primary" onclick="openBooking()">Đặt dịch vụ ngay</button>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>CleanHome</strong> — Dịch vụ vệ sinh chuyên nghiệp.</p>
+    <p>📞 0909 000 000 · ✉️ contact@cleanhome.vn · 📍 TP.HCM</p>
+    <p style="margin-top:8px;"><a href="admin-login.html" style="color:var(--muted);">Đăng nhập quản trị</a></p>
+  </div>
+</footer>
+
+<div class="float-btns">
+  <a href="https://zalo.me/0909000000" target="_blank" title="Chat Zalo" style="background:#0068ff;">💬</a>
+  <a href="https://m.me/cleanhome" target="_blank" title="Messenger" style="background:#00b2ff;">📩</a>
+  <a href="tel:0909000000" title="Gọi ngay">📞</a>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-bg" id="bookingModal">
+  <div class="modal">
+    <h3>Đặt dịch vụ</h3>
+    <div class="field"><label>Họ và tên</label><input id="f_name"></div>
+    <div class="row2">
+      <div class="field"><label>Số điện thoại</label><input id="f_phone"></div>
+      <div class="field"><label>Email</label><input id="f_email"></div>
+    </div>
+    <div class="field"><label>Dịch vụ</label>
+      <select id="f_service">
+        <option>Vệ sinh nhà ở</option><option>Vệ sinh căn hộ</option><option>Vệ sinh văn phòng</option>
+        <option>Vệ sinh sofa</option><option>Vệ sinh sau xây dựng</option><option>Tổng vệ sinh</option>
+      </select>
+    </div>
+    <div class="field"><label>Địa chỉ</label><input id="f_address"></div>
+    <div class="row2">
+      <div class="field"><label>Ngày</label><input type="date" id="f_date"></div>
+      <div class="field"><label>Giờ</label><input type="time" id="f_time"></div>
+    </div>
+    <div class="field"><label>Ghi chú</label><textarea id="f_note" rows="2"></textarea></div>
+    <div style="display:flex;gap:10px;margin-top:10px;">
+      <button class="btn btn-outline" style="flex:1" onclick="closeBooking()">Hủy</button>
+      <button class="btn btn-primary" style="flex:1" id="submitBtn" onclick="submitBooking()">Xác nhận đặt dịch vụ</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/customer.js"></script>
+</body>
+</html>

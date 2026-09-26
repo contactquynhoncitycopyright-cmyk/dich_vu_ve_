@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đăng nhập quản trị - CleanHome</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="login-wrap">
+  <div class="login-box">
+    <h2>🧼 CleanHome Admin</h2>
+    <p class="subtitle">Đăng nhập để quản lý đơn hàng</p>
+    <div class="field"><label>Email</label><input id="l_email" value="admin@cleanhome.vn"></div>
+    <div class="field"><label>Mật khẩu</label><input id="l_pass" type="password" value=""></div>
+    <button class="btn btn-primary" style="width:100%" onclick="doLogin()">Đăng nhập</button>
+    <p class="error-msg" id="errMsg">Sai email hoặc mật khẩu.</p>
+    <p style="margin-top:16px;"><a href="index.html" style="color:var(--muted);font-size:.85rem;">← Về trang khách hàng</a></p>
+  </div>
+</div>
+
+<script>
+  // DEMO ONLY: kiểm tra đăng nhập phía client, KHÔNG an toàn cho production.
+  // Khi có backend thật, thay đoạn này bằng gọi API xác thực (JWT/session) và
+  // không được để lộ mật khẩu hợp lệ trong mã nguồn frontend như dưới đây.
+  const DEMO_EMAIL = "admin@cleanhome.vn";
+  const DEMO_PASS = "admin123";
+
+  function doLogin() {
+    const email = document.getElementById("l_email").value.trim();
+    const pass = document.getElementById("l_pass").value;
+    if (email === DEMO_EMAIL && pass === DEMO_PASS) {
+      sessionStorage.setItem("cleanhome_admin_auth", "1");
+      location.href = "admin.html";
+    } else {
+      document.getElementById("errMsg").style.display = "block";
+    }
+  }
+  document.getElementById("l_pass").addEventListener("keydown", e => { if (e.key === "Enter") doLogin(); });
+</script>
+</body>
+</html>

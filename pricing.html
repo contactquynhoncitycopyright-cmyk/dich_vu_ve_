@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bảng giá - CleanHome</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="wrap top-bar-inner">
+    <span>📍 TP.HCM &nbsp;·&nbsp; 📞 <a href="tel:0909000000">0909 000 000</a> &nbsp;·&nbsp; ✉️ contact@cleanhome.vn</span>
+    <span>🕒 Thứ 2 - CN: 8:00 - 17:30</span>
+  </div>
+</div>
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">🧼 CleanHome</a>
+    <button class="hamburger" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Trang chủ</a>
+      <a href="about.html">Giới thiệu</a>
+      <div class="dropdown">
+        <a href="index.html#services">Dịch vụ ▾</a>
+        <div class="dropdown-menu" id="navServiceMenu"></div>
+      </div>
+      <a href="pricing.html" class="active">Bảng giá</a>
+      <a href="gallery.html">Hình ảnh</a>
+      <a href="contact.html">Liên hệ</a>
+    </div>
+    <button class="btn btn-primary" onclick="openBooking()">Đặt dịch vụ</button>
+  </div>
+</header>
+
+<section class="wrap">
+  <h2 class="title">Bảng giá dịch vụ</h2>
+  <p class="subtitle">Giá tham khảo — báo giá chính xác sẽ được tư vấn sau khi khảo sát thực tế</p>
+  <div class="pricing">
+    <div class="plan">
+      <h3>Gói Cơ Bản</h3>
+      <div class="price">299.000đ / lượt</div>
+      <ul><li>Vệ sinh cơ bản</li><li>Thời gian theo nhu cầu</li><li>Dụng cụ cơ bản</li></ul>
+      <button class="btn btn-outline" style="width:100%" onclick="openBooking('Vệ sinh nhà ở')">Đặt ngay</button>
+    </div>
+    <div class="plan feat">
+      <h3>Gói Tiêu Chuẩn</h3>
+      <div class="price">499.000đ / lượt</div>
+      <ul><li>Vệ sinh toàn diện</li><li>Dụng cụ chuyên dụng</li><li>Kiểm tra sau dịch vụ</li></ul>
+      <button class="btn btn-primary" style="width:100%" onclick="openBooking('Tổng vệ sinh')">Đặt ngay</button>
+    </div>
+    <div class="plan">
+      <h3>Gói Cao Cấp</h3>
+      <div class="price">799.000đ / lượt</div>
+      <ul><li>Tổng vệ sinh</li><li>Nhân viên chuyên nghiệp</li><li>Hỗ trợ ưu tiên</li></ul>
+      <button class="btn btn-outline" style="width:100%" onclick="openBooking('Vệ sinh văn phòng')">Đặt ngay</button>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 class="title">Giá theo từng dịch vụ</h2>
+  <p class="subtitle">Đơn giá tham khảo cho từng loại hình vệ sinh</p>
+  <div class="overflow-x">
+    <table>
+      <thead><tr><th>Dịch vụ</th><th>Đơn giá tham khảo</th><th></th></tr></thead>
+      <tbody id="priceTableBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="wrap" style="text-align:center;background:var(--card);border-radius:16px;">
+  <h2 class="title">Cần báo giá chi tiết cho không gian của bạn?</h2>
+  <p class="subtitle">Để lại thông tin, đội ngũ CleanHome sẽ khảo sát và báo giá miễn phí</p>
+  <button class="btn btn-primary" onclick="openBooking()">Đặt lịch khảo sát</button>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>CleanHome</strong> — Dịch vụ vệ sinh chuyên nghiệp.</p>
+    <p>📞 0909 000 000 · ✉️ contact@cleanhome.vn · 📍 TP.HCM</p>
+    <p style="margin-top:8px;"><a href="admin-login.html" style="color:var(--muted);">Đăng nhập quản trị</a></p>
+  </div>
+</footer>
+
+<div class="float-btns">
+  <a href="https://zalo.me/0909000000" target="_blank" title="Chat Zalo" style="background:#0068ff;">💬</a>
+  <a href="https://m.me/cleanhome" target="_blank" title="Messenger" style="background:#00b2ff;">📩</a>
+  <a href="tel:0909000000" title="Gọi ngay">📞</a>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-bg" id="bookingModal">
+  <div class="modal">
+    <h3>Đặt dịch vụ</h3>
+    <div class="field"><label>Họ và tên</label><input id="f_name"></div>
+    <div class="row2">
+      <div class="field"><label>Số điện thoại</label><input id="f_phone"></div>
+      <div class="field"><label>Email</label><input id="f_email"></div>
+    </div>
+    <div class="field"><label>Dịch vụ</label>
+      <select id="f_service">
+        <option>Vệ sinh nhà ở</option><option>Vệ sinh căn hộ</option><option>Vệ sinh văn phòng</option>
+        <option>Vệ sinh sofa</option><option>Vệ sinh sau xây dựng</option><option>Tổng vệ sinh</option>
+      </select>
+    </div>
+    <div class="field"><label>Địa chỉ</label><input id="f_address"></div>
+    <div class="row2">
+      <div class="field"><label>Ngày</label><input type="date" id="f_date"></div>
+      <div class="field"><label>Giờ</label><input type="time" id="f_time"></div>
+    </div>
+    <div class="field"><label>Ghi chú</label><textarea id="f_note" rows="2"></textarea></div>
+    <div style="display:flex;gap:10px;margin-top:10px;">
+      <button class="btn btn-outline" style="flex:1" onclick="closeBooking()">Hủy</button>
+      <button class="btn btn-primary" style="flex:1" id="submitBtn" onclick="submitBooking()">Xác nhận đặt dịch vụ</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/customer.js"></script>
+<script>
+  document.getElementById("priceTableBody").innerHTML = SERVICES.map(s => `
+    <tr><td>${s.icon} ${s.name}</td><td>${s.price}</td>
+    <td><button class="btn btn-outline" onclick="openBooking('${s.name}')">Đặt ngay</button></td></tr>`).join("");
+</script>
+</body>
+</html>

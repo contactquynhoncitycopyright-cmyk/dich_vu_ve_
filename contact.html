@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liên hệ - CleanHome</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="wrap top-bar-inner">
+    <span>📍 TP.HCM &nbsp;·&nbsp; 📞 <a href="tel:0909000000">0909 000 000</a> &nbsp;·&nbsp; ✉️ contact@cleanhome.vn</span>
+    <span>🕒 Thứ 2 - CN: 8:00 - 17:30</span>
+  </div>
+</div>
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">🧼 CleanHome</a>
+    <button class="hamburger" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Trang chủ</a>
+      <a href="about.html">Giới thiệu</a>
+      <div class="dropdown">
+        <a href="index.html#services">Dịch vụ ▾</a>
+        <div class="dropdown-menu" id="navServiceMenu"></div>
+      </div>
+      <a href="pricing.html">Bảng giá</a>
+      <a href="gallery.html">Hình ảnh</a>
+      <a href="contact.html" class="active">Liên hệ</a>
+    </div>
+    <button class="btn btn-primary" onclick="openBooking()">Đặt dịch vụ</button>
+  </div>
+</header>
+
+<section class="wrap">
+  <h2 class="title">Liên hệ với chúng tôi</h2>
+  <p class="subtitle">Để lại lời nhắn hoặc gọi trực tiếp — CleanHome phản hồi trong ngày</p>
+
+  <div class="grid" style="grid-template-columns:1.1fr .9fr;gap:24px;">
+    <div class="card"><div class="card-body">
+      <h3 style="margin-bottom:14px;">Gửi tin nhắn</h3>
+      <div class="field"><label>Họ và tên</label><input id="c_name"></div>
+      <div class="row2">
+        <div class="field"><label>Số điện thoại</label><input id="c_phone"></div>
+        <div class="field"><label>Email</label><input id="c_email"></div>
+      </div>
+      <div class="field"><label>Nội dung</label><textarea id="c_message" rows="4" placeholder="Bạn cần hỗ trợ gì?"></textarea></div>
+      <button class="btn btn-primary" id="contactSubmitBtn" onclick="submitContact()">Gửi liên hệ</button>
+    </div></div>
+
+    <div class="card"><div class="card-body">
+      <h3 style="margin-bottom:10px;">Thông tin liên hệ</h3>
+      <p style="margin-bottom:8px;">📍 <strong>Địa chỉ:</strong> 123 Đường ABC, Q.1, TP.HCM</p>
+      <p style="margin-bottom:8px;">📞 <strong>Hotline:</strong> <a href="tel:0909000000">0909 000 000</a></p>
+      <p style="margin-bottom:8px;">✉️ <strong>Email:</strong> contact@cleanhome.vn</p>
+      <p style="margin-bottom:16px;">🕒 <strong>Giờ làm việc:</strong> Thứ 2 - CN, 8:00 - 17:30</p>
+      <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+        <iframe title="Bản đồ" width="100%" height="220" style="border:0;"
+          src="https://www.google.com/maps?q=Ho+Chi+Minh+City&output=embed"></iframe>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>CleanHome</strong> — Dịch vụ vệ sinh chuyên nghiệp.</p>
+    <p>📞 0909 000 000 · ✉️ contact@cleanhome.vn · 📍 TP.HCM</p>
+    <p style="margin-top:8px;"><a href="admin-login.html" style="color:var(--muted);">Đăng nhập quản trị</a></p>
+  </div>
+</footer>
+
+<div class="float-btns">
+  <a href="https://zalo.me/0909000000" target="_blank" title="Chat Zalo" style="background:#0068ff;">💬</a>
+  <a href="https://m.me/cleanhome" target="_blank" title="Messenger" style="background:#00b2ff;">📩</a>
+  <a href="tel:0909000000" title="Gọi ngay">📞</a>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-bg" id="bookingModal">
+  <div class="modal">
+    <h3>Đặt dịch vụ</h3>
+    <div class="field"><label>Họ và tên</label><input id="f_name"></div>
+    <div class="row2">
+      <div class="field"><label>Số điện thoại</label><input id="f_phone"></div>
+      <div class="field"><label>Email</label><input id="f_email"></div>
+    </div>
+    <div class="field"><label>Dịch vụ</label>
+      <select id="f_service">
+        <option>Vệ sinh nhà ở</option><option>Vệ sinh căn hộ</option><option>Vệ sinh văn phòng</option>
+        <option>Vệ sinh sofa</option><option>Vệ sinh sau xây dựng</option><option>Tổng vệ sinh</option>
+      </select>
+    </div>
+    <div class="field"><label>Địa chỉ</label><input id="f_address"></div>
+    <div class="row2">
+      <div class="field"><label>Ngày</label><input type="date" id="f_date"></div>
+      <div class="field"><label>Giờ</label><input type="time" id="f_time"></div>
+    </div>
+    <div class="field"><label>Ghi chú</label><textarea id="f_note" rows="2"></textarea></div>
+    <div style="display:flex;gap:10px;margin-top:10px;">
+      <button class="btn btn-outline" style="flex:1" onclick="closeBooking()">Hủy</button>
+      <button class="btn btn-primary" style="flex:1" id="submitBtn" onclick="submitBooking()">Xác nhận đặt dịch vụ</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/customer.js"></script>
+<script>
+  function submitContact(){
+    const name=document.getElementById("c_name").value.trim();
+    const phone=document.getElementById("c_phone").value.trim();
+    const message=document.getElementById("c_message").value.trim();
+    if(!name || !phone || !message){ showToast("Vui lòng nhập đầy đủ tên, số điện thoại và nội dung"); return; }
+    // Demo: lưu tạm vào localStorage. Khi có backend thật, thay bằng gọi API gửi email/CRM.
+    const key="cleanhome_contact_messages";
+    const list=JSON.parse(localStorage.getItem(key)||"[]");
+    list.push({name,phone,email:document.getElementById("c_email").value.trim(),message,createdAt:Date.now()});
+    localStorage.setItem(key,JSON.stringify(list));
+    showToast("Đã gửi liên hệ! Chúng tôi sẽ phản hồi sớm nhất.");
+    ["c_name","c_phone","c_email","c_message"].forEach(id=>document.getElementById(id).value="");
+  }
+</script>
+</body>
+</html>
